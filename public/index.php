@@ -40,8 +40,8 @@ $router->get('/cambiar-password',[DashboardController::class,'cambiarPassword'])
 $router->post('/cambiar-password',[DashboardController::class,'cambiarPassword']);
 
 //API para tareas
-$router->get('/api/tareas',[TareasController::class,'index']);
-$router->post('/api/tareas',[TareasController::class,'crear']);
+$router->get('/api/tarea',[TareasController::class,'index']);
+$router->post('/api/tarea',[TareasController::class,'crear']);
 $router->post('/api/tarea/actualizar',[TareasController::class,'actualizar']);
 $router->post('/api/tarea/eliminar',[TareasController::class,'eliminar']);
 
