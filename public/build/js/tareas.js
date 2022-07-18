@@ -388,7 +388,7 @@
                 timer: 1000
               })
 
-              setTimeout( function() { window.location.href = "https://uptask-to1edo.herokuapp.com/dashboard"; }, 3000 );
+              setTimeout( function() { window.location.href = "https://uptask-to1edo.herokuapp.com/dashboard"; }, 1000 );
 
         } catch (error) {
             console.log(error);
