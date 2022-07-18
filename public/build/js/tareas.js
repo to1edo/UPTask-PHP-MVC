@@ -100,7 +100,8 @@
             tareasFiltradas = tareas.filter(tarea => tarea.estado === filtro );
             mostrarTareas(tareasFiltradas);
         }else
-        {
+        {   
+            console.log("hola");
             mostrarTareas(tareas);
         }
     }
@@ -162,7 +163,7 @@
 
     async function obtenerTareas(){
         try {
-            const url = `api/tareas?id=${obtenerProyecto()}`;
+            const url = `https://uptask-to1edo.herokuapp.com/api/tarea?id=${obtenerProyecto()}`;
             const respuesta = await fetch(url);
             const resultado = await respuesta.json();
             tareas = resultado.tareas;
