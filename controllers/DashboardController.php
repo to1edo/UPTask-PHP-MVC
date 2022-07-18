@@ -82,6 +82,36 @@ class DashboardController{
         ]);
     }
 
+    public static function eliminar(Router $router){
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+            session_start();
+            
+            $proyecto = Proyecto::where('id',$_POST['proyectoId']);
+
+            if($proyecto && $proyecto->propietarioId === $_SESSION['id']){
+
+                $proyecto->eliminar();
+
+                $respuesta = [
+                        'tipo' => 'success' , 
+                        'mensaje'=> 'Proyecto borrado'
+                ];
+                echo json_encode($respuesta);
+
+            }else{
+                
+                $respuesta = [
+                    'tipo' => 'error' , 
+                    'mensaje'=> 'Error al intentar borrar el proyecto'
+               ];
+               echo json_encode($respuesta);            
+            }
+            header("Location: /dashboard");
+        }
+    }
+
     public static function perfil(Router $router){
 
         session_start();   

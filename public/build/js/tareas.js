@@ -269,6 +269,7 @@
             }
           })
     }
+
     async function borrarTarea(tarea){
 
         const datos = new FormData();
@@ -344,6 +345,55 @@
         }
     }
 
-    
+
+    const proyectoBtn = document.querySelector(".borrar-proyecto");
+    proyectoBtn.addEventListener("click",function(){
+        Swal.fire({
+            title: 'Deseas eliminar este proyecto?',
+            text: "No podrás recuperarlo después de eliminado!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Borrar!',
+            cancelButtonText: 'Cancelar'
+          }).then((result) => {
+            if (result.isConfirmed) {  
+                borrarProyecto();
+            }
+          })
+    });
+
+    async function borrarProyecto(){
+
+        proyecto = obtenerProyecto();
+        alert(proyecto);
+        
+        const datos = new FormData();
+        datos.append('proyectoUrl',proyecto);
+
+        try {
+            const url = 'https://uptask-to1edo.herokuapp.com/api/proyecto/eliminar';
+            const respuesta = await fetch(url,{
+                method: 'POST',
+                body: datos
+            })
+
+            const resultado = await respuesta.json();
+
+            Swal.fire({
+                position: 'top-end',
+                icon: resultado.tipo,
+                title: resultado.mensaje,
+                showConfirmButton: false,
+                timer: 1000
+              })
+            
+
+        } catch (error) {
+            console.log(error);
+        }
+
+    } 
 
 })();
