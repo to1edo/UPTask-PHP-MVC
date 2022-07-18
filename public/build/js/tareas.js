@@ -385,10 +385,10 @@
                 icon: resultado.tipo,
                 title: resultado.mensaje,
                 showConfirmButton: false,
-                timer: 2500
+                timer: 1000
               })
-              
-            window.location.href = "https://uptask-to1edo.herokuapp.com/dashboard";
+
+              setTimeout( function() { window.location.href = "https://uptask-to1edo.herokuapp.com/dashboard"; }, 3000 );
 
         } catch (error) {
             console.log(error);
