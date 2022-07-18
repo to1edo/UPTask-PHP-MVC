@@ -104,9 +104,8 @@ class TareasController{
 
             session_start();
             
-            debuguear($_SESSION);
-            $proyecto = Proyecto::where('url',$_POST['proyectoId']);
-
+            $proyecto = Proyecto::where('id',$_POST['proyectoId']);
+            
             if($proyecto && $proyecto->propietarioId === $_SESSION['id']){
 
                 $tarea = Tarea::where('id',$_POST['tareaId']);
