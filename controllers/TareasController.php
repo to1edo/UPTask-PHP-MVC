@@ -104,7 +104,8 @@ class TareasController{
 
             session_start();
             
-            $proyecto = Proyecto::where('url',$_POST['proyectoUrl']);
+            debuguear($_SESSION);
+            $proyecto = Proyecto::where('url',$_POST['proyectoId']);
 
             if($proyecto && $proyecto->propietarioId === $_SESSION['id']){
 

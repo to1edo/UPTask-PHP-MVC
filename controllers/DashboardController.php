@@ -87,9 +87,9 @@ class DashboardController{
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
             session_start();
-            
-            $proyecto = Proyecto::where('id',$_POST['proyectoId']);
 
+            $proyecto = Proyecto::where('id',$_POST['proyectoUrl']);
+            
             if($proyecto && $proyecto->propietarioId === $_SESSION['id']){
 
                 $proyecto->eliminar();
