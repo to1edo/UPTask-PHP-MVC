@@ -82,7 +82,7 @@ class DashboardController{
         ]);
     }
 
-    public static function eliminar(Router $router){
+    public static function eliminar(){
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
@@ -108,7 +108,6 @@ class DashboardController{
                ];
                echo json_encode($respuesta);            
             }
-            header("Location: /dashboard");
         }
     }
 

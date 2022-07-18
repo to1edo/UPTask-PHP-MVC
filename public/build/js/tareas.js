@@ -367,7 +367,6 @@
     async function borrarProyecto(){
 
         proyecto = obtenerProyecto();
-        alert(proyecto);
         
         const datos = new FormData();
         datos.append('proyectoUrl',proyecto);
