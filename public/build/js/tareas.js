@@ -373,7 +373,7 @@
         datos.append('proyectoUrl',proyecto);
 
         try {
-            const url = 'https://uptask-to1edo.herokuapp.com/api/proyecto/eliminar';
+            const url = 'https://uptask-to1edo.herokuapp.com/proyecto/eliminar';
             const respuesta = await fetch(url,{
                 method: 'POST',
                 body: datos
