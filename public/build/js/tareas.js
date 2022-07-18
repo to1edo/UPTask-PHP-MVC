@@ -101,7 +101,6 @@
             mostrarTareas(tareasFiltradas);
         }else
         {   
-            console.log("hola");
             mostrarTareas(tareas);
         }
     }
@@ -147,7 +146,7 @@
             }
 
             tareas = [...tareas,tareaObj];
-            mostrarTareas();
+            mostrarTareas(tareas);
 
         } catch (error) {
             console.log(error);          
