@@ -112,7 +112,7 @@
         datos.append('proyectoId',obtenerProyecto());
 
         try {
-            const url = 'http://localhost:3000/api/tarea';
+            const url = 'https://uptask-to1edo.herokuapp.com/api/tarea';
 
             const respuesta = await fetch(url,{
                 method: 'POST',
@@ -276,7 +276,7 @@
         datos.append('proyectoId',tarea.proyectoId);
 
         try {
-            const url = '/api/tarea/eliminar';
+            const url = 'https://uptask-to1edo.herokuapp.com/api/tarea/eliminar';
             const respuesta = await fetch(url,{
                 method: 'POST',
                 body: datos
@@ -311,7 +311,7 @@
         datos.append('proyectoId',tarea.proyectoId);
 
         try {
-            const url = '/api/tarea/actualizar';
+            const url = 'https://uptask-to1edo.herokuapp.com/api/tarea/actualizar';
             const respuesta = await fetch(url,{
                 method: 'POST',
                 body: datos

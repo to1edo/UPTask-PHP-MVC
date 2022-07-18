@@ -19,8 +19,14 @@ class Router
 
     public function comprobarRutas()
     {
+        // Proteger Rutas...
 
-        $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
+        $url = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
+      
+        $ruta = explode('?',$url);
+
+        $currentUrl = $ruta[0];
+        
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
