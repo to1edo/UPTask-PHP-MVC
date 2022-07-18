@@ -385,7 +385,7 @@
                 icon: resultado.tipo,
                 title: resultado.mensaje,
                 showConfirmButton: false,
-                timer: 1000
+                timer: 2500
               })
               
             window.location.href = "https://uptask-to1edo.herokuapp.com/dashboard";
